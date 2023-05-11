@@ -15,35 +15,20 @@ jobs:
       matrix:
         include:
           # BRI OMC (A52SXQ_CHN_TW)
-          - model: "SM-A528B"
-            region: "BRI"
+          - model: "SM-A736B"
+            region: "XXV"
           # ODM OMC
-          - model: "SM-A528B"
-            region: "INS"
+          - model: "SM-A736B"
+            region: "SEK"
           # OJM OMC
-          - model: "SM-A528B"
-            region: "EGY"
+          - model: "SM-A736B"
+            region: "NBS"
           # OKR OMC
           - model: "SM-A528N"
-            region: "KOO"
+            region: "BVO"
           # OLE OMC
-          - model: "SM-A528B"
-            region: "XID"
-          # OLM OMC
-          - model: "SM-A528B"
-            region: "XSA"
-          # OWA OMC
-          - model: "SM-A528B"
-            region: "CDR"
-          # OWM OMC
-          - model: "SM-A528B"
-            region: "TGP"
-          # OWO OMC
-          - model: "SM-A528B"
-            region: "PEO"
-          # OXM OMC
-          - model: "SM-A528B"
-            region: "BTU"
+          - model: "SM-A736B"
+            region: "FWD"
 
     steps:
       - name: Checkout repo
@@ -164,13 +149,13 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           tags: true
-          github_token: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload release assets
         if: env.need_update == 1
         uses: softprops/action-gh-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           body_path: versions.txt
           tag_name: "${{ env.latest_shortversion }}_${{ matrix.region }}"
