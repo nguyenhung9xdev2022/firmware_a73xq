@@ -14,19 +14,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # BRI OMC (A52SXQ_CHN_TW)
+          # XXV OMC
           - model: "SM-A736B"
             region: "XXV"
-          # ODM OMC
+          # ZTO OMC
           - model: "SM-A736B"
-            region: "SEK"
-          # OJM OMC
+            region: "ZTO"
+          # NBS OMC
           - model: "SM-A736B"
             region: "NBS"
           # OKR OMC
           - model: "SM-A528N"
             region: "BVO"
-          # OLE OMC
+          # FWD OMC
           - model: "SM-A736B"
             region: "FWD"
 
