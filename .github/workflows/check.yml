@@ -24,7 +24,7 @@ jobs:
           - model: "SM-A736B"
             region: "NBS"
           # OKR OMC
-          - model: "SM-A528N"
+          - model: "SM-A736B"
             region: "BVO"
           # FWD OMC
           - model: "SM-A736B"
